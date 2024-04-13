@@ -1,3 +1,5 @@
+import 'package:chaffra/constants/themes.dart';
+import 'package:chaffra/localization/app_localizations_context.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,7 +18,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
           topLeft: Radius.circular(15.h),
           topRight: Radius.circular(15.h),
         ),
-        color: Colors.grey[800],
+        color: const Color(0xFF262A35),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -26,35 +28,35 @@ class CustomBottomNavigationBar extends ConsumerWidget {
             index: 0,
             icon: FluentIcons.home_20_regular,
             selectedIcon: FluentIcons.home_20_filled,
-            page: 'Home',
+            page: context.loc.homeBottomNavBarItem,
           ),
           buildAppBarItem(
             ref: ref,
             index: 1,
             icon: FluentIcons.search_20_regular,
             selectedIcon: FluentIcons.search_20_filled,
-            page: 'Search',
+            page: context.loc.searchBottomNavBarItem,
           ),
           buildAppBarItem(
             ref: ref,
             index: 2,
             icon: FluentIcons.heart_20_regular,
             selectedIcon: FluentIcons.heart_20_filled,
-            page: 'Wishlist',
+            page: context.loc.wishlistBottomNavBarItem,
           ),
           buildAppBarItem(
             ref: ref,
             index: 3,
             icon: FluentIcons.cart_20_regular,
             selectedIcon: FluentIcons.cart_20_filled,
-            page: 'Cart',
+            page: context.loc.cartBottomNavBarItem,
           ),
           buildAppBarItem(
             ref: ref,
             index: 4,
             icon: FluentIcons.person_20_regular,
             selectedIcon: FluentIcons.person_20_filled,
-            page: 'Profile',
+            page: context.loc.profileBottomNavBarItem,
           ),
         ],
       ),
@@ -71,7 +73,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
     return SizedBox(
       width: 70.w,
       child: InkWell(
-        overlayColor: MaterialStateProperty.all(Colors.grey[700]),
+        overlayColor: MaterialStateProperty.all(const Color(0xFF2F343C)),
         borderRadius: BorderRadius.circular(999),
         onTap: () =>
             ref.read(pageIndexChangerProvider.notifier).changePageIndex(index),
@@ -82,7 +84,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
             children: [
               !isSelected
                   ? Icon(icon)
-                  : Icon(selectedIcon, color: Colors.lightBlue)
+                  : Icon(selectedIcon, color: primaryColor)
                       .animate()
                       .scale(
                           end: const Offset(1.1, 1.1),
@@ -92,10 +94,10 @@ class CustomBottomNavigationBar extends ConsumerWidget {
                 padding: EdgeInsets.only(top: 5.h),
                 child: Text(
                   page,
-                  style: GoogleFonts.dmSans(
+                  style: TextStyle(
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w500,
-                    color: isSelected ? Colors.lightBlue : Colors.white,
+                    color: isSelected ? primaryColor : Colors.white,
                   ),
                 ),
               ),

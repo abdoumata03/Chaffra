@@ -1,12 +1,12 @@
+import 'package:chaffra/constants/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static final darkTheme = ThemeData(
-  
-    textTheme: TextTheme(),
     brightness: Brightness.dark,
-    primaryColor: Colors.grey[900],
-    scaffoldBackgroundColor: Colors.grey[900],
+    primaryColor: primaryColor,
+    scaffoldBackgroundColor: const Color(0xFF1A1B20),
     appBarTheme: AppBarTheme(
       color: Colors.grey[900],
       elevation: 0,

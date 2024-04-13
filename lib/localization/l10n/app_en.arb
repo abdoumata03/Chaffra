@@ -1,0 +1,9 @@
+{
+    "appTitle": "Chaffra",
+    "homeBottomNavBarItem": "Home",
+    "searchBottomNavBarItem": "Search",
+    "profileBottomNavBarItem": "Profile",
+    "wishlistBottomNavBarItem": "Wishlist",
+    "cartBottomNavBarItem": "Cart",
+    "currentLanguage": "Current language"
+}
