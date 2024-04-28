@@ -1,6 +1,5 @@
-import 'package:chaffra/constants/themes.dart';
+import 'package:chaffra/themes/tokens.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static final darkTheme = ThemeData(

@@ -16,6 +16,19 @@ extension SupportedLocalExtension on SupportedLocale {
     }
     return name;
   }
+
+  String get countryCode {
+    String countryCode;
+    switch (this) {
+      case SupportedLocale.en:
+        countryCode = 'us';
+        break;
+      case SupportedLocale.ar:
+        countryCode = 'sa';
+        break;
+    }
+    return countryCode;
+  }
 }
 
 extension LocaleExtension on Locale {

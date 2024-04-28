@@ -1,5 +1,6 @@
 import 'package:chaffra/localization/app_localizations_context.dart';
 import 'package:chaffra/shared/screens/home.dart';
+import 'package:chaffra/features/account/presentation/profile.dart';
 import 'package:chaffra/shared/widgets/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,7 +27,7 @@ class RootScreen extends ConsumerWidget {
             Center(child: Text(context.loc.searchBottomNavBarItem)),
             Center(child: Text(context.loc.wishlistBottomNavBarItem)),
             Center(child: Text(context.loc.cartBottomNavBarItem)),
-            Center(child: Text(context.loc.profileBottomNavBarItem))
+            const Profile(),
           ],
         )),
       ),

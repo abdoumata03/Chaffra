@@ -1,7 +1,6 @@
 import 'package:chaffra/localization/locale_provider.dart';
-import 'package:chaffra/localization/supported_locale.dart';
+import 'package:chaffra/routing/router_config.dart';
 import 'package:chaffra/services/shared_preferences/providers.dart';
-import 'package:chaffra/shared/screens/root_screen.dart';
 import 'package:chaffra/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,7 +29,7 @@ class MainApp extends ConsumerWidget {
     return ScreenUtilInit(
         designSize: const Size(360, 800),
         builder: (_, child) {
-          return MaterialApp(
+          return MaterialApp.router(
             debugShowCheckedModeBanner: false,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
@@ -42,7 +41,7 @@ class MainApp extends ConsumerWidget {
                   : GoogleFonts.dmSansTextTheme()
                       .apply(bodyColor: Colors.white),
             ),
-            home: RootScreen(),
+            routerConfig: routerConfig,
           );
         });
   }
