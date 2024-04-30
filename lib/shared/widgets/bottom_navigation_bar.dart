@@ -17,7 +17,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
           topLeft: Radius.circular(15.h),
           topRight: Radius.circular(15.h),
         ),
-        color: const Color(0xFF262A35),
+        color: kDark[700],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

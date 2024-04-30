@@ -25,5 +25,21 @@
     "allRightsReserved": "شفرة. كل الحقوق محفوظة ©",
     "version": "Chaffra.com - الإصدار 1.0",
     "aboutUs": "من نحن",
-    "logout": "تسجيل الخروج"
+    "logout": "تسجيل الخروج",
+    "categories":"تصفح التصنيفات",
+    "gaming":"الالعاب",
+    "elearing":"كورس",
+    "action":"اكشن",
+    "software":"برامج",
+    "adventure":"مغامرات",
+    "deals":"اكتشف العروض",
+    "bestsellers":"افضل البائعين",
+    "new release":"احدث العروض",
+    "steam":"بطاقات هدية ستيم",
+    "xbox":"اشتراكات اكس بوكس",
+    "preorders":"الطلبات المسبقة",
+    "bestsoftware":"افضل البرامج",
+    "dlc":"افضل محتويات قابلة للتحميل",
+    "cheapitems":"منتجات رخصية"
+
 }
