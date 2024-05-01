@@ -7,7 +7,7 @@ class TitleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left: 15.w,top: 20.h,bottom: 15.h),
+      padding:  EdgeInsets.only(left: 15.w,top: 20.h,bottom: 15.h,right: 15.w),
       child: InkWell(
         child: Row(
           children: [
@@ -20,7 +20,7 @@ class TitleButton extends StatelessWidget {
             const Expanded(child: Divider(thickness: 0.2,color: Colors.white,)),
             SizedBox(width: 8.w,),
             Icon(Icons.arrow_forward_ios,size: 18.h,),
-            SizedBox(width: 15.w,),
+
 
           ],
         ),

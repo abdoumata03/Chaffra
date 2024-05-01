@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 final routerConfig = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/home',
   routes: [
     GoRoute(
       name: pageNames.root,

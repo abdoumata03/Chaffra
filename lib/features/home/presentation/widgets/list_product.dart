@@ -24,7 +24,7 @@ class _ListCardState extends State<ListCard> {
           itemCount: 10,
           itemBuilder: (BuildContext context, int index){ return
             Padding(
-              padding:  EdgeInsets.only(left:21.w),
+              padding:  EdgeInsets.only(left:15.w),
               child: Container(
                 height: 180.h,
                 width: 270.w,

@@ -7,7 +7,7 @@ class TitleDiv extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left:15.w,top: 20.h,bottom: 15.h),
+      padding:  EdgeInsets.only(left:15.w,top: 20.h,bottom: 15.h,right: 15.w),
       child: Row(
         children: [
           Text(title,
@@ -17,7 +17,7 @@ class TitleDiv extends StatelessWidget {
             ),),
           SizedBox(width: 10.w,),
           const Expanded(child: Divider(thickness: 0.2,color: Colors.white,)),
-          SizedBox(width: 15.w,),
+
 
         ],
       ),
