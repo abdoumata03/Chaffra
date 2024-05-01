@@ -9,6 +9,7 @@ class CategoryGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: GridView.count(
+        physics: const NeverScrollableScrollPhysics(),
         primary: false,
         padding:  EdgeInsets.all(20.h),
         crossAxisSpacing: 10,

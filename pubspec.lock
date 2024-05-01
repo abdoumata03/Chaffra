@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.11.3"
+  animated_item:
+    dependency: "direct main"
+    description:
+      name: animated_item
+      sha256: "147b32d7f8ec6c3f76bb33d58a760fff5fe67dc6553b43a6a433c4f9cf96a9d3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   args:
     dependency: transitive
     description:
@@ -725,6 +733,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.27.7"
+  scroll_snap_list:
+    dependency: "direct main"
+    description:
+      name: scroll_snap_list
+      sha256: "8009ad9030f680b93f3107b29b1ea31284d867aa4972868d2970c6d61fe9e59f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.9.1"
   shared_preferences:
     dependency: "direct main"
     description:
