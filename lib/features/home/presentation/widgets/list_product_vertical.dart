@@ -27,7 +27,7 @@ class _VerticalListState extends State<VerticalList> {
         itemCount: 10,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: EdgeInsets.only(left: 15.w),
+            padding: EdgeInsetsDirectional.only(start: 15.w),
             child: Container(
                 width: 130.w,
                 decoration: BoxDecoration(
