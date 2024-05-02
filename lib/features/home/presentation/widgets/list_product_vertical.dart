@@ -18,69 +18,72 @@ class _VerticalListState extends State<VerticalList> {
   Widget build(BuildContext context) {
     return  SizedBox(
       height: 305.h,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (BuildContext context, int index){ return
-          Padding(
-            padding:  EdgeInsets.only(left:15.w),
-            child: Container(
-                height: 300.h,
-                width: 130.w,
-                decoration: BoxDecoration(
-                    color: kDark[700]
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height:190.h,
-                      width: 130.w,
-                      child: AspectRatio(
-                        aspectRatio: 9/16,
-                        child: Image.network(widget.image,
-                          fit: BoxFit.cover,
+      child: Padding(
+        padding:  EdgeInsets.symmetric(horizontal:15.w),
+        child: ListView.builder(
+          clipBehavior: Clip.none,
+          scrollDirection: Axis.horizontal,
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index){ return
+            Card(
+              child: Container(
+                  height: 300.h,
+                  width: 130.w,
+                  decoration: BoxDecoration(
+                      color: kDark[700]
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height:190.h,
+                        width: 130.w,
+                        child: AspectRatio(
+                          aspectRatio: 9/16,
+                          child: Image.network(widget.image,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 5.h,),
-                    Padding(
-                      padding:  EdgeInsets.only(left: 5.w),
-                      child: Text(widget.title,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500
+                      SizedBox(height: 5.h,),
+                      Padding(
+                        padding:  EdgeInsets.only(left: 5.w),
+                        child: Text(widget.title,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 2.h,),
-                    Padding(
-                      padding:  EdgeInsets.only(left: 5.w),
-                      child: const Text("from",
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    SizedBox(height: 2.h,),
-                    Padding(
-                      padding:  EdgeInsets.only(left: 5.w),
-                      child: Text(widget.price,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w600
+                      SizedBox(height: 2.h,),
+                      Padding(
+                        padding:  EdgeInsets.only(left: 5.w),
+                        child: const Text("from",
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        overflow: TextOverflow.ellipsis,
                       ),
-                    ),
+                      SizedBox(height: 2.h,),
+                      Padding(
+                        padding:  EdgeInsets.only(left: 5.w),
+                        child: Text(widget.price,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w600
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+              
+              
+              
+                    ],
+                  )
+              ),
+            );
+          },
 
-
-
-                  ],
-                )
-            ),
-          );
-        },
-
+        ),
       ),
     );
   }
