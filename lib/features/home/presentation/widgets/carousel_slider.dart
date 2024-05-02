@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chaffra/themes/tokens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -24,7 +25,7 @@ class _SliderCarouselState extends State<SliderCarousel> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Stack(children: [
+      child: Stack(alignment: Alignment.bottomCenter, children: [
         Container(
           height: 400,
         ),
@@ -34,40 +35,46 @@ class _SliderCarouselState extends State<SliderCarousel> {
           child: SizedBox(
             height: 400.h,
             width: 400.w,
-            child: CarouselSlider.builder(
-                carouselController: widget.controller,
-                itemCount: widget.image.length,
-                itemBuilder: (context, index, realIndex) {
-                  final urlImage = widget.image[index];
-                  return buildImage(urlImage, index);
-                },
-                options: CarouselOptions(
-                    viewportFraction: 1,
-                    height: 400.h,
-                    autoPlay: true,
-                    enableInfiniteScroll: false,
-                    autoPlayInterval: const Duration(seconds: 2),
-                    autoPlayAnimationDuration:
-                        const Duration(milliseconds: 500),
-                    enlargeCenterPage: false,
-                    onPageChanged: (index, reason) =>
-                        setState(() => activeIndex = index))),
+            child: Container(
+              foregroundDecoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    kDark[900]!,
+                    Colors.transparent,
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: const [0, 0.5],
+                ),
+              ),
+              child: CarouselSlider.builder(
+                  carouselController: widget.controller,
+                  itemCount: widget.image.length,
+                  itemBuilder: (context, index, realIndex) {
+                    final urlImage = widget.image[index];
+                    return buildImage(urlImage, index);
+                  },
+                  options: CarouselOptions(
+                      viewportFraction: 1,
+                      height: 400.h,
+                      autoPlay: true,
+                      enableInfiniteScroll: false,
+                      autoPlayInterval: const Duration(seconds: 3),
+                      autoPlayAnimationDuration:
+                          const Duration(milliseconds: 500),
+                      enlargeCenterPage: false,
+                      onPageChanged: (index, reason) =>
+                          setState(() => activeIndex = index))),
+            ),
           ),
         ),
-        Positioned(right: 10.w, top: 355.h, child: buildIndicator()),
-        Positioned(
-            top: 0,
-            child: SizedBox(
-                width: 410.w,
-                child: FittedBox(
-                    fit: BoxFit.fill,
-                    child: SvgPicture.asset("assets/Rectangle 118.svg")))),
+        Positioned(bottom: 30.h, child: buildIndicator()),
         Positioned(top: 10.h, right: 21.w, child: const SearchButton()),
         Positioned(
-            top: 380,
+            bottom: 0,
             left: 0,
             child: Container(
-              height: 30.h,
+              height: 15.h,
               width: 362.w,
               decoration: BoxDecoration(
                   color: kDark[900],
@@ -90,6 +97,5 @@ class _SliderCarouselState extends State<SliderCarousel> {
   void animateToSlide(int index) => widget.controller.animateToPage(index);
 }
 
-Widget buildImage(String urlImage, int index) => SizedBox(
-    width: 420.w,
-    child: Image.network(urlImage, fit: BoxFit.fill));
+Widget buildImage(String urlImage, int index) =>
+    SizedBox(width: 420.w, child: Image.network(urlImage, fit: BoxFit.cover));

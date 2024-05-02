@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
 
 import '../../../../themes/tokens.dart';
+
 class ListCard extends StatefulWidget {
   const ListCard({super.key});
 
@@ -11,68 +12,101 @@ class ListCard extends StatefulWidget {
 }
 
 class _ListCardState extends State<ListCard> {
+  int itemCount = 10;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         height: 180.h,
-        child:  Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 15.w),
-          child: ScrollSnapList(
-            clipBehavior: Clip.none,
-            selectedItemAnchor: SelectedItemAnchor.START,
-            itemSize: 400,
-            onItemFocus: (index) {},
-            duration: 300,
-            scrollDirection: Axis.horizontal,
-            itemCount: 10,
-            itemBuilder: (BuildContext context, int index){ return
-              Card(
+        child: ScrollSnapList(
+
+          selectedItemAnchor: SelectedItemAnchor.START,
+          itemSize: 285.w,
+          onItemFocus: (index) {},
+          duration: 300,
+          scrollDirection: Axis.horizontal,
+          itemCount: itemCount,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: EdgeInsets.only(
+                  left: 15.w,
+                  right: index == itemCount - 1
+                      ? MediaQuery.of(context).size.width - 285.w
+                      : 0),
+              child: Material(
+                color: kDark[700],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.h)),
                 child: Container(
                   height: 180.h,
                   width: 270.w,
-                  decoration: BoxDecoration(
-                      color: kDark[700]
-                  ),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(8.h)),
                   child: Row(
                     children: [
                       AspectRatio(
-                        aspectRatio: 9/16,
-                        child: Image.network("https://files.tecnoblog.net/wp-content/uploads/2021/01/dead-by-daylight.jpg",
-                          fit: BoxFit.cover,
+                        aspectRatio: 9 / 16,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(8.h),
+                            bottomLeft: Radius.circular(8.h),
+                          ),
+                          child: Image.network(
+                            "https://files.tecnoblog.net/wp-content/uploads/2021/01/dead-by-daylight.jpg",
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                      SizedBox(width: 9.w,),
+                      SizedBox(
+                        width: 15.w,
+                      ),
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 10.h,),
-                            Text("Dead by Light 2023",
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
-                              style: TextStyle(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w600
-
-                              ),),
-                            SizedBox(height: 10.h,),
-                            const Text('From'),
-                            SizedBox(height: 10.h,),
-                            const Text('99\$'),
-
-                          ],
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 15.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Dead by Light 2023",
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(fontWeight: FontWeight.w600),
+                              ),
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Text(
+                                'From',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                              ),
+                              SizedBox(
+                                height: 4.h,
+                              ),
+                              Text(
+                                '99\$',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge!
+                                    .copyWith(fontWeight: FontWeight.w600),
+                              ),
+                            ],
+                          ),
                         ),
                       )
-
-
                     ],
                   ),
                 ),
-              );
-            },
-
-          ),
-        )
-    );
+              ),
+            );
+          },
+        ));
   }
 }

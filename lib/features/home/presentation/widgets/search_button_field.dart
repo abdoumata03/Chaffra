@@ -7,26 +7,24 @@ class SearchButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: InkWell(
-        child: Container(
-          height: 60.h,
-          width: 320.w,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.h),
-              color: Colors.white
-          ),
-          child: Row(children: [
-            SizedBox(width: 9.w,),
-            const Icon(Icons.search,color: Colors.black,),
-            SizedBox(width: 5.w,),
-            Text(context.loc.searchBottomNavBarItem,
-              style: const TextStyle(
-                  color: Colors.black
-              ),
-            )
-          ],),
+    return InkWell(
+      child: Container(
+        height: 50.h,
+        width: 320.w,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.h),
+            color: Colors.white
         ),
+        child: Row(children: [
+          SizedBox(width: 9.w,),
+          const Icon(Icons.search,color: Colors.black,),
+          SizedBox(width: 5.w,),
+          Text(context.loc.searchBottomNavBarItem,
+            style: const TextStyle(
+                color: Colors.black
+            ),
+          )
+        ],),
       ),
     );
   }

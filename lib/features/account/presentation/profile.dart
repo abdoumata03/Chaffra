@@ -22,7 +22,7 @@ class Profile extends ConsumerWidget {
         child: SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
