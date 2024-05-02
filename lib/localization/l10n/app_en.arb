@@ -25,5 +25,21 @@
     "allRightsReserved": "© Chaffra. All rights reserved",
     "version": "Chaffra.com - Version 1.0",
     "logout": "Logout",
-    "aboutUs": "About Us"
+    "aboutUs": "About Us",
+    "categories": "Discover categories",
+    "gaming":"Gaming",
+    "elearing":"E-Learning",
+    "action":"Action",
+    "software":"Software",
+    "adventure":"Adventure",
+    "deals":"Discover Deals",
+    "bestsellers":"Bestsellers",
+    "newrelease":"New release",
+    "steam":"Steam gift cards",
+    "xbox":"Xbox subscriptions",
+    "preorders":"Preorders",
+    "bestsoftware":"Best software",
+    "dlc":"The best of DLC",
+    "cheapitems":"Cheap items"
+
 }
