@@ -45,4 +45,17 @@ extension LocaleExtension on Locale {
     }
     return name;
   }
+
+  String get countryCode {
+    late String countryCode;
+    switch (this) {
+      case const Locale('en'):
+        countryCode = 'us';
+        break;
+      case const Locale('ar'):
+        countryCode = 'sa';
+        break;
+    }
+    return countryCode;
+  }
 }
