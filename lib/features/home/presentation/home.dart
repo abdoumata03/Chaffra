@@ -5,6 +5,9 @@ import 'package:chaffra/features/home/presentation/widgets/list_product_vertical
 import 'package:chaffra/localization/app_localizations_context.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/categories_gridview.dart';
 import 'widgets/title_componenet.dart';
 
@@ -13,6 +16,7 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
+
 class _HomePageState extends State<HomePage> {
   int activeIndex = 0;
   final controller = CarouselController();
@@ -26,14 +30,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return AnnotatedRegion(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+      ),
       child: Scaffold(
           body: SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 20.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SliderCarousel(controller: controller, image: urlImages),
-
             TitleButton(
               title: context.loc.categories,
             ),

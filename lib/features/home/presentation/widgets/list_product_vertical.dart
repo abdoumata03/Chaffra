@@ -7,7 +7,11 @@ class VerticalList extends StatefulWidget {
   final String image;
   final String title;
   final String price;
-  const VerticalList({required this.image,required this.title,required this.price,super.key});
+  const VerticalList(
+      {required this.image,
+      required this.title,
+      required this.price,
+      super.key});
 
   @override
   State<VerticalList> createState() => _VerticalListState();
@@ -16,71 +20,82 @@ class VerticalList extends StatefulWidget {
 class _VerticalListState extends State<VerticalList> {
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
-      height: 305.h,
+    return SizedBox(
+      height: 300.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
-        itemBuilder: (BuildContext context, int index){ return
-          Padding(
-            padding:  EdgeInsets.only(left:15.w),
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: EdgeInsets.only(left: 15.w),
             child: Container(
-                height: 300.h,
                 width: 130.w,
                 decoration: BoxDecoration(
-                    color: kDark[700]
-                ),
+                    color: kDark[700],
+                    borderRadius: BorderRadius.circular(5.h)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height:190.h,
+                      height: 190.h,
                       width: 130.w,
-                      child: AspectRatio(
-                        aspectRatio: 9/16,
-                        child: Image.network(widget.image,
-                          fit: BoxFit.cover,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(5.h),
+                          topRight: Radius.circular(5.h),
+                        ),
+                        child: AspectRatio(
+                          aspectRatio: 9 / 16,
+                          child: Image.network(
+                            widget.image,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(height: 5.h,),
                     Padding(
-                      padding:  EdgeInsets.only(left: 5.w),
-                      child: Text(widget.title,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500
-                        ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(widget.title,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white)),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Text(
+                            "From",
+                            style:
+                                Theme.of(context).textTheme.bodySmall!.copyWith(
+                                      color: Colors.grey,
+                                    ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          Text(
+                            widget.price,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
-                    ),
-                    SizedBox(height: 2.h,),
-                    Padding(
-                      padding:  EdgeInsets.only(left: 5.w),
-                      child: const Text("from",
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    SizedBox(height: 2.h,),
-                    Padding(
-                      padding:  EdgeInsets.only(left: 5.w),
-                      child: Text(widget.price,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w600
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-
-
-
+                    )
                   ],
-                )
-            ),
+                )),
           );
         },
-
       ),
     );
   }
