@@ -1,3 +1,4 @@
+import 'package:chaffra/features/home/presentation/home.dart';
 import 'package:chaffra/localization/app_localizations_context.dart';
 import 'package:chaffra/shared/screens/home.dart';
 import 'package:chaffra/features/account/presentation/profile.dart';
@@ -23,7 +24,7 @@ class RootScreen extends ConsumerWidget {
             child: IndexedStack(
           index: currentIndex,
           children: [
-            const Center(child: Home()),
+            const HomePage(),
             Center(child: Text(context.loc.searchBottomNavBarItem)),
             Center(child: Text(context.loc.wishlistBottomNavBarItem)),
             Center(child: Text(context.loc.cartBottomNavBarItem)),

@@ -7,24 +7,22 @@ class CategoryGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: GridView.count(
-        physics: const NeverScrollableScrollPhysics(),
-        primary: false,
-        padding:  EdgeInsets.all(20.h),
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        childAspectRatio: 2,
-        crossAxisCount: 3,
-        children: <Widget>[
-          GridContainer(title:context.loc.gaming),
-          GridContainer(title:context.loc.elearing),
-          GridContainer(title:context.loc.action),
-          GridContainer(title:context.loc.software),
-          GridContainer(title:context.loc.adventure),
-
-        ],
-      ),
+    return GridView.count(
+      physics: const NeverScrollableScrollPhysics(),
+      primary: false,
+      padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
+      crossAxisSpacing: 10,
+      mainAxisSpacing: 10,
+      childAspectRatio: 2,
+      crossAxisCount: 3,
+      children: <Widget>[
+        GridContainer(title:context.loc.gaming),
+        GridContainer(title:context.loc.elearing),
+        GridContainer(title:context.loc.action),
+        GridContainer(title:context.loc.software),
+        GridContainer(title:context.loc.adventure),
+    
+      ],
     );
   }
 }
