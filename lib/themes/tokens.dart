@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 const primaryColor = Color(0xFF0D81EC);
-const kDark= MaterialColor(0xFF1A1B20, <int, Color> {
+const kDark = MaterialColor(0xFF1A1B20, <int, Color>{
   900: Color(0xFF1A1B20),
-  700: Color(0xFF262A35),
-  500: Color(0xFFA90808),
+  700: Color(0xFF262A35)
 });
 
-const promoColor=Color(0xFF6C59DC);
+const saleColor = Color(0xFFE43A36);
+

@@ -1,4 +1,3 @@
-
 import 'package:chaffra/features/home/presentation/widgets/carousel_slider.dart';
 import 'package:chaffra/features/home/presentation/widgets/promotion_card.dart';
 import 'package:chaffra/features/home/presentation/widgets/title_button.dart';
@@ -30,7 +29,6 @@ class _HomePageState extends State<HomePage> {
     'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/11/forza-horizon-5-sand-dunes-logo.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5',
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
@@ -52,7 +50,10 @@ class _HomePageState extends State<HomePage> {
             TitleDiv(
               title: context.loc.deals,
             ),
-          const PromotionCard(title: "Red Dead Redmeption 2 - steamKey -Global", price: "69.99\$", time: Duration(hours: 12)),
+            const PromotionCard(
+                title: "Red Dead Redmeption 2 - steamKey -Global",
+                price: "69.99\$",
+                time: Duration(hours: 12)),
 
             TitleDiv(title: context.loc.bestsellers),
             const ListCard(),
