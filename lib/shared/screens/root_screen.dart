@@ -25,7 +25,7 @@ class RootScreen extends ConsumerWidget {
           index: currentIndex,
           children: [
             const HomePage(),
-            Center(child: Text(context.loc.searchBottomNavBarItem)),
+            const Home(),
             Center(child: Text(context.loc.wishlistBottomNavBarItem)),
             Center(child: Text(context.loc.cartBottomNavBarItem)),
             const Profile(),

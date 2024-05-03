@@ -14,6 +14,7 @@ class ListCard extends StatelessWidget {
     return SizedBox(
         height: 180.h,
         child: ScrollSnapList(
+
           selectedItemAnchor: SelectedItemAnchor.START,
           itemSize: 285.w,
           onItemFocus: (index) {},

@@ -1,4 +1,6 @@
+
 import 'package:chaffra/features/home/presentation/widgets/carousel_slider.dart';
+import 'package:chaffra/features/home/presentation/widgets/promotion_card.dart';
 import 'package:chaffra/features/home/presentation/widgets/title_button.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product_vertical.dart';
@@ -6,13 +8,13 @@ import 'package:chaffra/localization/app_localizations_context.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/categories_gridview.dart';
 import 'widgets/title_componenet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -27,6 +29,7 @@ class _HomePageState extends State<HomePage> {
     'https://files.tecnoblog.net/wp-content/uploads/2021/01/dead-by-daylight.jpg',
     'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/11/forza-horizon-5-sand-dunes-logo.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5',
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,43 +48,34 @@ class _HomePageState extends State<HomePage> {
             TitleButton(
               title: context.loc.categories,
             ),
-            const SizedBox(height: 150, child: CategoryGrid()),
+            const CategoryGrid(),
             TitleDiv(
               title: context.loc.deals,
             ),
-            //Here THE DEALS Cards //////////////////////////
+          const PromotionCard(title: "Red Dead Redmeption 2 - steamKey -Global", price: "69.99\$", time: Duration(hours: 12)),
 
             TitleDiv(title: context.loc.bestsellers),
-
             const ListCard(),
-
             TitleButton(title: context.loc.newrelease),
-
             const VerticalList(
                 image:
-                    "https://files.tecnoblog.net/wp-content/uploads/2021/01/dead-by-daylight.jpg",
+                    "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/11/forza-horizon-5-sand-dunes-logo.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
-
             //BestSellers ADS Blured card////////////
             TitleButton(title: context.loc.steam),
-
             const VerticalList(
                 image:
                     "https://files.tecnoblog.net/wp-content/uploads/2021/01/dead-by-daylight.jpg",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
-
             TitleButton(title: context.loc.xbox),
-
             const VerticalList(
                 image:
-                    "https://files.tecnoblog.net/wp-content/uploads/2021/01/dead-by-daylight.jpg",
+                    "https://fifauteam.com/images/covers/fc24/hd/ultimate.png",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
-
             TitleButton(title: context.loc.preorders),
-
             const ListCard(),
           ],
         ),
