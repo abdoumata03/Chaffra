@@ -1,13 +1,20 @@
 import 'package:chaffra/features/home/presentation/widgets/carousel_slider.dart';
+import 'package:chaffra/features/home/presentation/widgets/container_grid.dart';
 import 'package:chaffra/features/home/presentation/widgets/promotion_card.dart';
+import 'package:chaffra/features/home/presentation/widgets/special_deal_container.dart';
+import 'package:chaffra/features/home/presentation/widgets/special_deals_gridview.dart';
 import 'package:chaffra/features/home/presentation/widgets/title_button.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product_vertical.dart';
 import 'package:chaffra/localization/app_localizations_context.dart';
+import 'package:chaffra/shared/widgets/dark_container.dart';
+import 'package:chaffra/themes/tokens.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/categories_gridview.dart';
 import 'widgets/title_componenet.dart';
@@ -51,11 +58,36 @@ class _HomePageState extends State<HomePage> {
             TitleDiv(
               title: context.loc.deals,
             ),
+            const SpecialDealsGridview(
+              children: [
+                DiscoverDealContainer(
+                  title: "The Elden Rings on Steam",
+                  description: "Up to 40% off",
+                  url: 'https://m.media-amazon.com/images/I/61Hj5BHApPL.jpg',
+                ),
+                DiscoverDealContainer(
+                  title: "Red Dead Redmeption 2",
+                  description: "Up to 50% off",
+                  url: 'https://m.media-amazon.com/images/I/71nlEoSrewL.jpg',
+                ),
+                DiscoverDealContainer(
+                  title: "Fortnite",
+                  description: "20% Steam keys",
+                  url:
+                      'https://artsyfartsy.eu/wp-content/uploads/sites/8/2023/11/16201.jpg',
+                ),
+                DiscoverDealContainer(
+                  title: "Steam Keys",
+                  description: "Best deals",
+                  url:
+                      'https://assetsio.gnwcdn.com/steam_ROoZJs3.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp',
+                ),
+              ],
+            ),
             const PromotionCard(
                 title: "Red Dead Redmeption 2 - steamKey -Global",
                 price: "69.99\$",
                 time: Duration(hours: 12)),
-
             TitleDiv(title: context.loc.bestsellers),
             const ListCard(),
             TitleButton(title: context.loc.newrelease),
@@ -64,7 +96,25 @@ class _HomePageState extends State<HomePage> {
                     "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/11/forza-horizon-5-sand-dunes-logo.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
-            //BestSellers ADS Blured card////////////
+            TitleButton(
+              title: context.loc.specialDeals,
+            ),
+            const SpecialDealsGridview(
+              children: [
+                SpecialDealContainer(
+                  dealAmount: 5,
+                ),
+                SpecialDealContainer(
+                  dealAmount: 10,
+                ),
+                SpecialDealContainer(
+                  dealAmount: 15,
+                ),
+                SpecialDealContainer(
+                  dealAmount: 20,
+                ),
+              ],
+            ),
             TitleButton(title: context.loc.steam),
             const VerticalList(
                 image:
@@ -82,6 +132,70 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       )),
+    );
+  }
+}
+
+class DiscoverDealContainer extends StatelessWidget {
+  const DiscoverDealContainer({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.url,
+  });
+
+  final String title;
+  final String description;
+  final String url;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      clipBehavior: Clip.hardEdge,
+      height: 60.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.h),
+        color: kDark[700],
+      ),
+      child: Row(
+        children: [
+          Container(
+            color: Colors.red,
+            child: AspectRatio(
+              aspectRatio: 10 / 16,
+              child: Image.network(
+                url,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          SizedBox(width: 10.w),
+          Flexible(
+            child: Row(
+              children: [
+                Flexible(
+                    child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      description,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(color: Colors.grey, fontSize: 11.sp),
+                    ),
+                  ],
+                )),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
