@@ -1,5 +1,6 @@
 import 'package:chaffra/features/home/presentation/widgets/carousel_slider.dart';
 import 'package:chaffra/features/home/presentation/widgets/container_grid.dart';
+import 'package:chaffra/features/home/presentation/widgets/discover_deal_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/promotion_card.dart';
 import 'package:chaffra/features/home/presentation/widgets/special_deal_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/special_deals_gridview.dart';
@@ -136,66 +137,3 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class DiscoverDealContainer extends StatelessWidget {
-  const DiscoverDealContainer({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.url,
-  });
-
-  final String title;
-  final String description;
-  final String url;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      clipBehavior: Clip.hardEdge,
-      height: 60.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.h),
-        color: kDark[700],
-      ),
-      child: Row(
-        children: [
-          Container(
-            color: Colors.red,
-            child: AspectRatio(
-              aspectRatio: 10 / 16,
-              child: Image.network(
-                url,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          SizedBox(width: 10.w),
-          Flexible(
-            child: Row(
-              children: [
-                Flexible(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      title,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      description,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: Colors.grey, fontSize: 11.sp),
-                    ),
-                  ],
-                )),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
