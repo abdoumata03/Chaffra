@@ -19,7 +19,7 @@ class SearchButton extends StatelessWidget {
           SizedBox(width: 9.w,),
           const Icon(Icons.search,color: Colors.black,),
           SizedBox(width: 5.w,),
-          Text(context.loc.searchBottomNavBarItem,
+          Text(context.loc.search,
             style: const TextStyle(
                 color: Colors.black
             ),
