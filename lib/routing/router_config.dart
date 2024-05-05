@@ -5,6 +5,8 @@ import 'package:chaffra/shared/screens/root_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/search/search.dart';
+
 final routerConfig = GoRouter(
   initialLocation: '/',
   routes: [
@@ -12,7 +14,7 @@ final routerConfig = GoRouter(
       name: pageNames.root,
       path: "/",
       pageBuilder: (context, state) =>  const MaterialPage<void>(
-        child: RootScreen(),
+        child: HomePage(),
       ),
     ),
     GoRoute(

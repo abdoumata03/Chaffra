@@ -4,6 +4,7 @@ import 'package:chaffra/features/home/presentation/widgets/title_button.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product_vertical.dart';
 import 'package:chaffra/localization/app_localizations_context.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             TitleButton(
               title: context.loc.categories,
             ),
-            const CategoryGrid(),
+            CategoryGrid(),
             TitleDiv(
               title: context.loc.deals,
             ),
