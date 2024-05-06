@@ -51,7 +51,7 @@ class ListCard extends StatelessWidget {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 15.h),
+                            padding: EdgeInsets.only(top: 12.h),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -63,6 +63,12 @@ class ListCard extends StatelessWidget {
                                       .textTheme
                                       .titleMedium!
                                       .copyWith(fontWeight: FontWeight.w600),
+                                ),
+                                SizedBox(height: 5.h,),
+                                const Text("Game of year .Action and more horror actions unlimited scenes and missions . Recommeneded for +16 ",
+                                overflow: TextOverflow.ellipsis,
+                                  maxLines: 3,
+
                                 ),
                                 SizedBox(
                                   height: 10.h,
