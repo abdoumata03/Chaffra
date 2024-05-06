@@ -1,9 +1,7 @@
-import "package:chaffra/features/search/Widgets/search_field.dart";
-import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
-
 import "Widgets/blur_gradient.dart";
+import "Widgets/search_field.dart";
 class Search extends StatefulWidget {
   const Search({super.key});
   @override
@@ -19,10 +17,10 @@ class _SearchState extends State<Search> {
     return Scaffold(
       body: Stack(
         children: [
-          BluredGrad(),
+          const BluredGrad(),
           Positioned(
               top: 50.h,
-              child: SearchField())
+              child: const SearchField())
         ],
       )
 
