@@ -1,5 +1,8 @@
 import 'package:chaffra/features/home/presentation/widgets/carousel_slider.dart';
+import 'package:chaffra/features/home/presentation/widgets/discover_deal_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/promotion_card.dart';
+import 'package:chaffra/features/home/presentation/widgets/special_deal_container.dart';
+import 'package:chaffra/features/home/presentation/widgets/special_deals_gridview.dart';
 import 'package:chaffra/features/home/presentation/widgets/title_button.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product_vertical.dart';
@@ -52,11 +55,36 @@ class _HomePageState extends State<HomePage> {
             TitleDiv(
               title: context.loc.deals,
             ),
+            const SpecialDealsGridview(
+              children: [
+                DiscoverDealContainer(
+                  title: "The Elden Rings on Steam",
+                  description: "Up to 40% off",
+                  url: 'https://m.media-amazon.com/images/I/61Hj5BHApPL.jpg',
+                ),
+                DiscoverDealContainer(
+                  title: "Red Dead Redmeption 2",
+                  description: "Up to 50% off",
+                  url: 'https://m.media-amazon.com/images/I/71nlEoSrewL.jpg',
+                ),
+                DiscoverDealContainer(
+                  title: "Fortnite",
+                  description: "20% Steam keys",
+                  url:
+                      'https://artsyfartsy.eu/wp-content/uploads/sites/8/2023/11/16201.jpg',
+                ),
+                DiscoverDealContainer(
+                  title: "Steam Keys",
+                  description: "Best deals",
+                  url:
+                      'https://assetsio.gnwcdn.com/steam_ROoZJs3.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp',
+                ),
+              ],
+            ),
             const PromotionCard(
                 title: "Red Dead Redmeption 2 - steamKey -Global",
                 price: "69.99\$",
                 time: Duration(hours: 12)),
-
             TitleDiv(title: context.loc.bestsellers),
             const ListCard(),
             TitleButton(title: context.loc.newrelease),
@@ -66,7 +94,25 @@ class _HomePageState extends State<HomePage> {
                 description:  "Game of year .Action and more horror actions unlimited scenes and missions . Recommeneded for +16 ",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
-            //BestSellers ADS Blured card////////////
+            TitleButton(
+              title: context.loc.specialDeals,
+            ),
+            const SpecialDealsGridview(
+              children: [
+                SpecialDealContainer(
+                  dealAmount: 5,
+                ),
+                SpecialDealContainer(
+                  dealAmount: 10,
+                ),
+                SpecialDealContainer(
+                  dealAmount: 15,
+                ),
+                SpecialDealContainer(
+                  dealAmount: 20,
+                ),
+              ],
+            ),
             TitleButton(title: context.loc.steam),
             const VerticalList(
                 image:
@@ -97,3 +143,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
