@@ -91,7 +91,6 @@ class _HomePageState extends State<HomePage> {
             const VerticalList(
                 image:
                     "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/11/forza-horizon-5-sand-dunes-logo.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5",
-                description:  "Game of year .Action and more horror actions unlimited scenes and missions . Recommeneded for +16 ",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
             TitleButton(
@@ -117,20 +116,18 @@ class _HomePageState extends State<HomePage> {
             const VerticalList(
                 image:
                     "https://files.tecnoblog.net/wp-content/uploads/2021/01/dead-by-daylight.jpg",
-                description:  "Game of year .Action and more horror actions unlimited scenes and missions . Recommeneded for +16 ",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
             TitleButton(title: context.loc.xbox),
             const VerticalList(
                 image:
                     "https://fifauteam.com/images/covers/fc24/hd/ultimate.png",
-                description:  "Game of year .Action and more horror actions unlimited scenes and missions . Recommeneded for +16 ",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
+            SizedBox(height: 20.h,),
+            const GradientCard(),
             TitleButton(title: context.loc.preorders),
             const ListCard(),
-            SizedBox(height: 20.h,),
-            const GradientCard()
 
 
 

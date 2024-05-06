@@ -6,13 +6,11 @@ import '../../../../themes/tokens.dart';
 class VerticalList extends StatefulWidget {
   final String image;
   final String title;
-  final String description;
   final String price;
 
   const VerticalList(
       {required this.image,
       required this.title,
-      required this.description,
       required this.price,
       super.key});
 
@@ -71,16 +69,9 @@ class _VerticalListState extends State<VerticalList> {
                                   .copyWith(
                                       fontWeight: FontWeight.w600,
                                       color: Colors.white)),
+
                           SizedBox(
-                            height: 2.h,
-                          ),
-                           Text(
-                           widget.description,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                          ),
-                          SizedBox(
-                            height: 2.h,
+                            height: 10.h,
                           ),
                           Text(
                             "From",
