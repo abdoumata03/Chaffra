@@ -64,10 +64,10 @@ class ListCard extends StatelessWidget {
                                       .titleMedium!
                                       .copyWith(fontWeight: FontWeight.w600),
                                 ),
-                                SizedBox(height: 5.h,),
+                                SizedBox(height: 10.h,),
                                 const Text("Game of year .Action and more horror actions unlimited scenes and missions . Recommeneded for +16 ",
                                 overflow: TextOverflow.ellipsis,
-                                  maxLines: 3,
+                                  maxLines: 2,
 
                                 ),
                                 SizedBox(
