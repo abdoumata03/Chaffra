@@ -124,20 +124,15 @@ class _HomePageState extends State<HomePage> {
                     "https://fifauteam.com/images/covers/fc24/hd/ultimate.png",
                 title: "Dead by Light 2023(Steam-Xbox)",
                 price: "99\$"),
-            SizedBox(height: 20.h,),
+            SizedBox(
+              height: 20.h,
+            ),
             const GradientCard(),
             TitleButton(title: context.loc.preorders),
             const ListCard(),
-
-
-
-
-
-
           ],
         ),
       )),
     );
   }
 }
-
