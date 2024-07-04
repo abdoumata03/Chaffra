@@ -1,7 +1,8 @@
-
 import 'package:chaffra/localization/app_localizations_context.dart';
+import 'package:chaffra/themes/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class SearchButton extends StatelessWidget {
   const SearchButton({super.key});
 
@@ -10,21 +11,28 @@ class SearchButton extends StatelessWidget {
     return InkWell(
       child: Container(
         height: 50.h,
-        width: 320.w,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.h),
-            color: Colors.white
-        ),
-        child: Row(children: [
-          SizedBox(width: 9.w,),
-          const Icon(Icons.search,color: Colors.black,),
-          SizedBox(width: 5.w,),
-          Text(context.loc.search,
-            style: const TextStyle(
-                color: Colors.black
+            borderRadius: BorderRadius.circular(8.h), color: kDark[700]),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 9.w,
             ),
-          )
-        ],),
+            Icon(
+              Icons.search,
+              color: Colors.white.withOpacity(0.8),
+            ),
+            SizedBox(
+              width: 5.w,
+            ),
+            Text(
+              context.loc.search,
+              style: TextStyle(
+                color: Colors.white.withOpacity(0.5),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

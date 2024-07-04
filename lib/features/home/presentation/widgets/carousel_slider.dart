@@ -34,17 +34,6 @@ class _SliderCarouselState extends State<SliderCarousel> {
             height: 400.h,
             width: 400.w,
             child: Container(
-              foregroundDecoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    kDark[900]!,
-                    Colors.transparent,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  stops: const [0, 0.5],
-                ),
-              ),
               child: CarouselSlider.builder(
                   carouselController: widget.controller,
                   itemCount: widget.image.length,
@@ -67,19 +56,6 @@ class _SliderCarouselState extends State<SliderCarousel> {
           ),
         ),
         Positioned(bottom: 30.h, child: buildIndicator()),
-        Positioned(top: 10.h, right: 21.w, child: const SearchButton()),
-        Positioned(
-            bottom: 0,
-            left: 0,
-            child: Container(
-              height: 15.h,
-              width: 362.w,
-              decoration: BoxDecoration(
-                  color: kDark[900],
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10.h),
-                      topRight: Radius.circular(10.h))),
-            ))
       ]),
     );
   }

@@ -14,7 +14,6 @@ class ListCard extends StatelessWidget {
     return SizedBox(
         height: 180.h,
         child: ScrollSnapList(
-
           selectedItemAnchor: SelectedItemAnchor.START,
           itemSize: 285.w,
           onItemFocus: (index) {},
@@ -64,11 +63,13 @@ class ListCard extends StatelessWidget {
                                       .titleMedium!
                                       .copyWith(fontWeight: FontWeight.w600),
                                 ),
-                                SizedBox(height: 10.h,),
-                                const Text("Game of year .Action and more horror actions unlimited scenes and missions . Recommeneded for +16 ",
-                                overflow: TextOverflow.ellipsis,
+                                SizedBox(
+                                  height: 10.h,
+                                ),
+                                const Text(
+                                  "Game of year .Action and more horror actions unlimited scenes and missions . Recommeneded for +16 ",
+                                  overflow: TextOverflow.ellipsis,
                                   maxLines: 2,
-
                                 ),
                                 SizedBox(
                                   height: 10.h,

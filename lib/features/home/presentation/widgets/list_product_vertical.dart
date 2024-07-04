@@ -31,9 +31,8 @@ class _VerticalListState extends State<VerticalList> {
             padding: EdgeInsetsDirectional.only(start: 15.w),
             child: Container(
                 width: 130.w,
-                decoration: BoxDecoration(
-                    color: kDark[700],
-                    borderRadius: BorderRadius.circular(5.h)),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(5.h)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -69,17 +68,8 @@ class _VerticalListState extends State<VerticalList> {
                                   .copyWith(
                                       fontWeight: FontWeight.w600,
                                       color: Colors.white)),
-
                           SizedBox(
                             height: 10.h,
-                          ),
-                          Text(
-                            "From",
-                            style:
-                                Theme.of(context).textTheme.bodySmall!.copyWith(
-                                      color: Colors.grey,
-                                    ),
-                            overflow: TextOverflow.ellipsis,
                           ),
                           Text(
                             widget.price,

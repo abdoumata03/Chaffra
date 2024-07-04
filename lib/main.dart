@@ -29,7 +29,7 @@ class MainApp extends ConsumerWidget {
     return ScreenUtilInit(
         designSize: const Size(360, 800),
         builder: (_, child) {
-          return MaterialApp.router(
+          return MaterialApp.router(  
             debugShowCheckedModeBanner: false,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,

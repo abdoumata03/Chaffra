@@ -13,11 +13,13 @@ class CustomBottomNavigationBar extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Ink(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(15.h),
-          topRight: Radius.circular(15.h),
+        border: Border(
+          top: BorderSide(
+            color: Colors.grey[600]!,
+            width: 0.5,
+          ),
         ),
-        color: kDark[700],
+        color: kDark[900],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

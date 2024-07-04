@@ -98,63 +98,43 @@ class PromotionCard extends StatelessWidget {
                                     .titleLarge!
                                     .copyWith(fontWeight: FontWeight.w600),
                               ),
-                              // Game Old Price
-                              const Text(
-                                "88.99\$",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  decoration: TextDecoration.lineThrough,
-                                  decorationColor: Colors.grey,
-                                  decorationThickness: 2,
-                                ),
+                              SizedBox(
+                                height: 8.h,
                               ),
+                              // Game Old Price
+                              Row(
+                                children: [
+                                  const Text(
+                                    "88.99\$",
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      decoration: TextDecoration.lineThrough,
+                                      decorationColor: Colors.grey,
+                                      decorationThickness: 2,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 5.w,
+                                  ),
+                                  Container(
+                                    height: 25.h,
+                                    width: 40.w,
+                                    decoration: BoxDecoration(
+                                        color: primaryColor,
+                                        borderRadius:
+                                            BorderRadius.circular(5.h)),
+                                    child: const Center(
+                                      child: Text("-20%"),
+                                    ),
+                                  ),
+                                ],
+                              )
                             ],
-                          ),
-                          SizedBox(
-                            width: 20.w,
-                          ),
-                          Container(
-                            height: 30.h,
-                            width: 50.w,
-                            decoration: BoxDecoration(
-                                color: primaryColor,
-                                borderRadius: BorderRadius.circular(5.h)),
-                            child: const Center(
-                              child: Text("-20%"),
-                            ),
                           ),
                         ],
                       ),
                       SizedBox(
                         height: 15.h,
-                      ),
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              TimeBox(time: time),
-                              const Text("Dys"),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Column(
-                            children: [
-                              TimeBox(time: time),
-                              const Text("Hrs"),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Column(
-                            children: [
-                              TimeBox(time: time),
-                              const Text("Mins"),
-                            ],
-                          ),
-                        ],
                       ),
                     ],
                   ),
@@ -163,35 +143,5 @@ class PromotionCard extends StatelessWidget {
             ),
           ]),
         ));
-  }
-}
-
-class TimeBox extends StatelessWidget {
-  const TimeBox({
-    super.key,
-    required this.time,
-  });
-
-  final Duration time;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 35.h,
-      width: 45.w,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.h),
-        color: saleColor,
-      ),
-      child: Center(
-        child: Text(
-          time.inHours.toString(),
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(fontWeight: FontWeight.w600),
-        ),
-      ),
-    );
   }
 }

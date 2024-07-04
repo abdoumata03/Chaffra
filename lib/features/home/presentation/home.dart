@@ -1,12 +1,15 @@
 import 'package:chaffra/features/home/presentation/widgets/carousel_slider.dart';
 import 'package:chaffra/features/home/presentation/widgets/discover_deal_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/promotion_card.dart';
+import 'package:chaffra/features/home/presentation/widgets/search_button_field.dart';
 import 'package:chaffra/features/home/presentation/widgets/special_deal_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/special_deals_gridview.dart';
 import 'package:chaffra/features/home/presentation/widgets/title_button.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product_vertical.dart';
 import 'package:chaffra/localization/app_localizations_context.dart';
+import 'package:chaffra/themes/tokens.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
@@ -47,6 +50,36 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 20.h,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Row(
+                children: [
+                  Expanded(child: const SearchButton()),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Container(
+                    height: 50.h,
+                    width: 50.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50.h),
+                      color: kDark[700],
+                      border: Border.all(color: Colors.grey[800]!, width: 0.5),
+                    ),
+                    child: const Icon(
+                      FluentIcons.person_20_regular,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
             SliderCarousel(controller: controller, image: urlImages),
             TitleButton(
               title: context.loc.categories,
