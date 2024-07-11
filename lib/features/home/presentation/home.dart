@@ -45,6 +45,7 @@ class _HomePageState extends State<HomePage> {
         statusBarIconBrightness: Brightness.light,
       ),
       child: Scaffold(
+
           body: SingleChildScrollView(
         padding: EdgeInsets.only(bottom: 20.h),
         child: Column(
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Row(
                 children: [
-                  Expanded(child: const SearchButton()),
+                  const Expanded(child: SearchButton()),
                   SizedBox(
                     width: 10.w,
                   ),
