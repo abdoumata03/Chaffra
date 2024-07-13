@@ -17,147 +17,145 @@ class Profile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locale = ref.watch(localeControllerProvider);
-    return SingleChildScrollView(
-        child: SizedBox(
-      width: double.infinity,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DarkContainer(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-              child: Column(
-                children: [
-                  Text(
-                    context.loc.welcomeToChaffra,
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    context.loc.welcomeMessage,
-                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                          color: Colors.grey,
-                        ),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 20.h),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Button(
-                        onPressed: () {}, child: Text(context.loc.signIn)),
-                  ),
-                ],
+    return Scaffold(
+      body: SingleChildScrollView(
+          child: SizedBox(
+        width: double.infinity,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 20.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: Row(
+                  children: [
+                    const Spacer(),
+                    IconButton(
+                      onPressed: () {
+                        context.pushNamed(pageNames.notifications);
+                      },
+                      icon: Icon(FluentIcons.alert_24_regular),
+                      iconSize: 28.r,
+                    ),
+                    IconButton(
+                      icon: Icon(FluentIcons.settings_24_regular),
+                      onPressed: () {
+                        context.pushNamed(pageNames.settings);
+                      },
+                      iconSize: 28.r,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 20.h),
-            Text(context.loc.myAccount),
-            SizedBox(height: 15.h),
-            DarkContainer(
-              padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.h),
-              child: Column(
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 40.r,
+                      backgroundColor: Colors.grey,
+                      child: Icon(
+                        FluentIcons.person_24_regular,
+                        size: 40.r,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(width: 20.w),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          context.loc.notLoggedIn,
+                          style:
+                              Theme.of(context).textTheme.titleMedium!.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
+                        SizedBox(height: 10.h),
+                        SizedBox(
+                          child: Button(
+                              onPressed: () {},
+                              child: Text(context.loc.signIn)),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 18.h),
+              Container(
+                color: Colors.grey.withOpacity(0.2),
+                height: 8.h,
+              ),
+              SizedBox(height: 10.h),
+              Column(
                 children: [
                   SettingItem(
                     icon: FluentIcons.person_20_regular,
                     title: context.loc.myProfile,
-                    internal: false,
+                  ),
+                  Divider(
+                    indent: 40.w,
                   ),
                   SettingItem(
                     icon: FluentIcons.history_20_regular,
                     title: context.loc.orderHistory,
-                    internal: false,
+                  ),
+                  Divider(
+                    indent: 40.w,
                   ),
                   SettingItem(
                     icon: FluentIcons.star_20_regular,
                     title: context.loc.whishlist,
-                    internal: false,
                   ),
-                ],
-              ),
-            ),
-            SizedBox(height: 15.h),
-            Text(context.loc.settings),
-            SizedBox(height: 15.h),
-            DarkContainer(
-              padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.h),
-              child: Column(
-                children: [
-                  SettingItem(
-                    icon: FluentIcons.local_language_20_regular,
-                    title: context.loc.language,
-                    value: locale.name,
-                    onTap: () {
-                      // Navigate to the language selection page
-                      context.pushNamed(pageNames.language);
-                    },
+                  Divider(
+                    indent: 40.w,
                   ),
                   SettingItem(
-                    icon: FluentIcons.currency_dollar_euro_20_regular,
-                    title: context.loc.currency,
-                    value: "EUR".hardcoded,
+                    icon: FluentIcons.person_support_20_regular,
+                    title: context.loc.support,
                   ),
-                  SettingItem(
-                    icon: FluentIcons.alert_20_regular,
-                    title: context.loc.notifications,
-                    internal: false,
-                    onTap: () async {},
+                  Divider(
+                    indent: 40.w,
                   ),
-                ],
-              ),
-            ),
-            SizedBox(height: 15.h),
-            Text(context.loc.helpAndSupport),
-            SizedBox(height: 15.h),
-            DarkContainer(
-              padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.h),
-              child: SettingItem(
-                icon: FluentIcons.person_support_20_regular,
-                title: context.loc.support,
-                internal: false,
-              ),
-            ),
-            SizedBox(height: 15.h),
-            Text(context.loc.legalInformation),
-            SizedBox(height: 15.h),
-            DarkContainer(
-              padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.h),
-              child: Column(
-                children: [
                   SettingItem(
                     icon: FluentIcons.document_one_page_20_regular,
                     title: context.loc.temsAndConditions,
+                  ),
+                  Divider(
+                    indent: 40.w,
                   ),
                   SettingItem(
                     icon: FluentIcons.shield_person_20_regular,
                     title: context.loc.privacyPolicy,
                   ),
-                  const Divider(),
+                  Divider(
+                    indent: 40.w,
+                  ),
                   SettingItem(
                     icon: FluentIcons.info_20_regular,
                     title: context.loc.aboutUs,
                   ),
                 ],
               ),
-            ),
-            SizedBox(height: 15.h),
-            SizedBox(
-              width: double.infinity,
-              child: Text(
-                " ${context.loc.allRightsReserved} \n ${context.loc.version}"
-                    .hardcoded,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall!
-                    .copyWith(color: Colors.grey, height: 1.5),
-                textAlign: TextAlign.center,
+              SizedBox(height: 15.h),
+              SizedBox(
+                width: double.infinity,
+                child: Text(
+                  " ${context.loc.allRightsReserved} \n ${context.loc.version}"
+                      .hardcoded,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .copyWith(color: Colors.grey, height: 1.5),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    ));
+      )),
+    );
   }
 }

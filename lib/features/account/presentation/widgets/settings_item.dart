@@ -5,13 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SettingItem extends StatelessWidget {
   const SettingItem(
       {super.key,
-      this.internal = true,
       required this.icon,
       required this.title,
       this.onTap,
       this.value});
 
-  final bool internal;
   final IconData icon;
   final String title;
   final String? value;
@@ -27,7 +25,7 @@ class SettingItem extends StatelessWidget {
         ),
         onTap: onTap,
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
+          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
           child: Row(
             children: [
               Icon(icon),
@@ -59,10 +57,6 @@ class SettingItem extends StatelessWidget {
                       ),
                   ],
                 ),
-              const Spacer(),
-              internal
-                  ? const Icon(FluentIcons.chevron_right_20_regular)
-                  : const Icon(FluentIcons.expand_up_right_20_regular)
             ],
           ),
         ),

@@ -1,4 +1,6 @@
 import 'package:chaffra/features/account/presentation/language.dart';
+import 'package:chaffra/features/account/presentation/notifications.dart';
+import 'package:chaffra/features/account/presentation/settings.dart';
 import 'package:chaffra/features/home/presentation/home.dart';
 import 'package:chaffra/routing/router_page_names.dart';
 import 'package:chaffra/shared/screens/root_screen.dart';
@@ -11,7 +13,7 @@ final routerConfig = GoRouter(
     GoRoute(
       name: pageNames.root,
       path: "/",
-      pageBuilder: (context, state) =>  const MaterialPage<void>(
+      pageBuilder: (context, state) => const MaterialPage<void>(
         child: RootScreen(),
       ),
     ),
@@ -27,6 +29,20 @@ final routerConfig = GoRouter(
       path: "/home",
       pageBuilder: (context, state) => const MaterialPage<void>(
         child: HomePage(),
+      ),
+    ),
+    GoRoute(
+      name: pageNames.settings,
+      path: "/settings",
+      pageBuilder: (context, state) => const MaterialPage<void>(
+        child: SettingsPage(),
+      ),
+    ),
+    GoRoute(
+      name: pageNames.notifications,
+      path: "/notification",
+      pageBuilder: (context, state) => const MaterialPage<void>(
+        child: NotificationsPage(),
       ),
     ),
   ],

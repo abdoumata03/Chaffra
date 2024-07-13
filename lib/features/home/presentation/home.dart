@@ -1,3 +1,4 @@
+import 'package:chaffra/features/home/presentation/widgets/bundle_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/carousel_slider.dart';
 import 'package:chaffra/features/home/presentation/widgets/discover_deal_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/promotion_card.dart';
@@ -8,11 +9,13 @@ import 'package:chaffra/features/home/presentation/widgets/title_button.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product_vertical.dart';
 import 'package:chaffra/localization/app_localizations_context.dart';
+import 'package:chaffra/shared/widgets/dark_container.dart';
 import 'package:chaffra/themes/tokens.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/categories_gridview.dart';
 import 'widgets/gradient_container_layouts.dart';
@@ -57,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Row(
                 children: [
-                  Expanded(child: const SearchButton()),
+                  const Expanded(child: SearchButton()),
                   SizedBox(
                     width: 10.w,
                   ),
@@ -85,40 +88,38 @@ class _HomePageState extends State<HomePage> {
               title: context.loc.categories,
             ),
             const CategoryGrid(),
-            TitleDiv(
-              title: context.loc.deals,
+            TitleButton(
+              title: context.loc.giftCards,
             ),
             const SpecialDealsGridview(
               children: [
-                DiscoverDealContainer(
-                  title: "The Elden Rings on Steam",
-                  description: "Up to 40% off",
-                  url: 'https://m.media-amazon.com/images/I/61Hj5BHApPL.jpg',
+                GiftCardContainer(
+                  title: "Steam cards",
+                  url: 'assets/images/steam-cards.png',
                 ),
-                DiscoverDealContainer(
-                  title: "Red Dead Redmeption 2",
-                  description: "Up to 50% off",
-                  url: 'https://m.media-amazon.com/images/I/71nlEoSrewL.jpg',
+                GiftCardContainer(
+                  title: "Playstation cards",
+                  url: 'assets/images/psn-cards.png',
                 ),
-                DiscoverDealContainer(
-                  title: "Fortnite",
-                  description: "20% Steam keys",
-                  url:
-                      'https://artsyfartsy.eu/wp-content/uploads/sites/8/2023/11/16201.jpg',
+                GiftCardContainer(
+                  title: "Xbox cards",
+                  url: 'assets/images/xbox-cards.png',
                 ),
-                DiscoverDealContainer(
-                  title: "Steam Keys",
-                  description: "Best deals",
-                  url:
-                      'https://assetsio.gnwcdn.com/steam_ROoZJs3.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp',
+                GiftCardContainer(
+                  title: "Nintendo cards",
+                  url: 'assets/images/nintendo-cards.png',
                 ),
               ],
             ),
-            const PromotionCard(
-                title: "Red Dead Redmeption 2 - steamKey -Global",
-                price: "69.99\$",
-                time: Duration(hours: 12)),
-            TitleDiv(title: context.loc.bestsellers),
+            TitleButton(
+              title: context.loc.bundle,
+            ),
+            // const PromotionCard(
+            //     title: "Red Dead Redmeption 2 - steamKey -Global",
+            //     price: "69.99\$",
+            //     time: Duration(hours: 12)),
+            const BundleContainer(),
+            TitleButton(title: context.loc.bestsellers),
             const ListCard(),
             TitleButton(title: context.loc.newrelease),
             const VerticalList(

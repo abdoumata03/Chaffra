@@ -18,19 +18,10 @@ class LanguageListTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedLocale = ref.watch(localeControllerProvider);
-
     return ListTile(
       trailing: selectedLocale.name == locale.name
           ? const Icon(FluentIcons.checkmark_24_filled)
           : null,
-      leading: CountryFlag.fromCountryCode(locale.countryCode, width: 20.w,),
-      shape: RoundedRectangleBorder(
-        side: BorderSide(
-            color:
-                selectedLocale.name == locale.name ? primaryColor : Colors.grey,
-            width: 1),
-        borderRadius: BorderRadius.circular(5),
-      ),
       title: Text(locale.name),
       onTap: () {
         ref.read(localeControllerProvider.notifier).changeLanguage(locale);

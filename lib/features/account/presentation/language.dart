@@ -24,20 +24,15 @@ class Language extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
-          child: Wrap(
-            runSpacing: 10.h,
-            children: List.generate(
-              SupportedLocale.values.length,
-              (index) => LanguageListTile(
-                locale: SupportedLocale.values[index],
-              ),
-            ),
+        child: ListView.separated(
+          itemCount: SupportedLocale.values.length,
+          shrinkWrap: true,
+          separatorBuilder: (context, index) => const Divider(),
+          itemBuilder: (context, index) => LanguageListTile(
+            locale: SupportedLocale.values[index],
           ),
         ),
       ),
     );
   }
 }
-
