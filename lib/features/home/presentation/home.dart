@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
         statusBarIconBrightness: Brightness.light,
       ),
       child: Scaffold(
+
           body: SingleChildScrollView(
         padding: EdgeInsets.only(bottom: 20.h),
         child: Column(
