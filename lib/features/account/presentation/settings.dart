@@ -4,7 +4,6 @@ import 'package:chaffra/localization/hardcoded_string.dart';
 import 'package:chaffra/localization/locale_provider.dart';
 import 'package:chaffra/localization/supported_locale.dart';
 import 'package:chaffra/routing/router_page_names.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +18,7 @@ class SettingsPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(FluentIcons.arrow_left_24_regular),
+          icon: const Icon(Icons.keyboard_backspace_outlined),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -38,7 +37,7 @@ class SettingsPage extends ConsumerWidget {
               child: Column(
                 children: [
                   SettingItem(
-                    icon: FluentIcons.local_language_20_regular,
+                    icon: Icons.translate_outlined,
                     title: context.loc.language,
                     value: locale.name,
                     onTap: () {
@@ -47,7 +46,7 @@ class SettingsPage extends ConsumerWidget {
                   ),
                   const Divider(),
                   SettingItem(
-                    icon: FluentIcons.currency_dollar_euro_20_regular,
+                    icon: Icons.attach_money_outlined,
                     title: context.loc.currency,
                     value: "EUR".hardcoded,
                   ),

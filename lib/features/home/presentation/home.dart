@@ -11,7 +11,6 @@ import 'package:chaffra/features/home/presentation/widgets/list_product_vertical
 import 'package:chaffra/localization/app_localizations_context.dart';
 import 'package:chaffra/shared/widgets/dark_container.dart';
 import 'package:chaffra/themes/tokens.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
@@ -74,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                       border: Border.all(color: Colors.grey[800]!, width: 0.5),
                     ),
                     child: const Icon(
-                      FluentIcons.person_20_regular,
+                      Icons.person_outline,
                       color: Colors.white,
                     ),
                   )

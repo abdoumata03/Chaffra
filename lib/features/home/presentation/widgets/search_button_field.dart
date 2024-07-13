@@ -30,7 +30,15 @@ class SearchButton extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white.withOpacity(0.5),
               ),
-            )
+            ),
+            const Spacer(),
+            Icon(
+              Icons.mic_outlined,
+              color: Colors.white.withOpacity(0.8),
+            ),
+            SizedBox(
+              width: 9.w,
+            ),
           ],
         ),
       ),

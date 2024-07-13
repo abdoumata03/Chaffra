@@ -2,7 +2,6 @@ import 'package:chaffra/localization/locale_provider.dart';
 import 'package:chaffra/localization/supported_locale.dart';
 import 'package:chaffra/themes/tokens.dart';
 import 'package:country_flags/country_flags.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +19,7 @@ class LanguageListTile extends ConsumerWidget {
     final selectedLocale = ref.watch(localeControllerProvider);
     return ListTile(
       trailing: selectedLocale.name == locale.name
-          ? const Icon(FluentIcons.checkmark_24_filled)
+          ? const Icon(Icons.check_outlined)
           : null,
       title: Text(locale.name),
       onTap: () {

@@ -1,6 +1,5 @@
 import 'package:chaffra/localization/app_localizations_context.dart';
 import 'package:chaffra/shared/widgets/button.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,7 +11,7 @@ class NotificationsPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: const Icon(FluentIcons.arrow_left_24_regular),
+            icon: const Icon(Icons.keyboard_backspace_outlined),
             onPressed: () {
               Navigator.pop(context);
             },

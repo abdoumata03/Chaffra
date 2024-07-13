@@ -1,6 +1,5 @@
 import 'package:chaffra/themes/tokens.dart';
 import 'package:chaffra/localization/app_localizations_context.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,36 +26,36 @@ class CustomBottomNavigationBar extends ConsumerWidget {
           buildAppBarItem(
             ref: ref,
             index: 0,
-            icon: FluentIcons.home_20_regular,
-            selectedIcon: FluentIcons.home_20_filled,
+            icon: Icons.home_outlined,
+            selectedIcon: Icons.home,
             page: context.loc.homeBottomNavBarItem,
           ),
           buildAppBarItem(
             ref: ref,
             index: 1,
-            icon: FluentIcons.search_20_regular,
-            selectedIcon: FluentIcons.search_20_filled,
+            icon: Icons.search_outlined,
+            selectedIcon: Icons.search,
             page: context.loc.searchBottomNavBarItem,
           ),
           buildAppBarItem(
             ref: ref,
             index: 2,
-            icon: FluentIcons.heart_20_regular,
-            selectedIcon: FluentIcons.heart_20_filled,
+            icon: Icons.favorite_outline,
+            selectedIcon: Icons.favorite,
             page: context.loc.wishlistBottomNavBarItem,
           ),
           buildAppBarItem(
             ref: ref,
             index: 3,
-            icon: FluentIcons.cart_20_regular,
-            selectedIcon: FluentIcons.cart_20_filled,
+            icon: Icons.shopping_cart_outlined,
+            selectedIcon: Icons.shopping_cart,
             page: context.loc.cartBottomNavBarItem,
           ),
           buildAppBarItem(
             ref: ref,
             index: 4,
-            icon: FluentIcons.person_20_regular,
-            selectedIcon: FluentIcons.person_20_filled,
+            icon: Icons.person_outline,
+            selectedIcon: Icons.person,
             page: context.loc.profileBottomNavBarItem,
           ),
         ],

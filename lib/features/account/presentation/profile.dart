@@ -6,7 +6,6 @@ import 'package:chaffra/shared/widgets/button.dart';
 import 'package:chaffra/shared/widgets/dark_container.dart';
 import 'package:chaffra/localization/app_localizations_context.dart';
 import 'package:chaffra/features/account/presentation/widgets/settings_item.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,11 +34,11 @@ class Profile extends ConsumerWidget {
                       onPressed: () {
                         context.pushNamed(pageNames.notifications);
                       },
-                      icon: Icon(FluentIcons.alert_24_regular),
+                      icon: const Icon(Icons.notifications_outlined),
                       iconSize: 28.r,
                     ),
                     IconButton(
-                      icon: Icon(FluentIcons.settings_24_regular),
+                      icon: const Icon(Icons.settings_outlined),
                       onPressed: () {
                         context.pushNamed(pageNames.settings);
                       },
@@ -56,7 +55,7 @@ class Profile extends ConsumerWidget {
                       radius: 40.r,
                       backgroundColor: Colors.grey,
                       child: Icon(
-                        FluentIcons.person_24_regular,
+                        Icons.person,
                         size: 40.r,
                         color: Colors.white,
                       ),
@@ -92,49 +91,49 @@ class Profile extends ConsumerWidget {
               Column(
                 children: [
                   SettingItem(
-                    icon: FluentIcons.person_20_regular,
+                    icon: Icons.person_outline,
                     title: context.loc.myProfile,
                   ),
                   Divider(
                     indent: 40.w,
                   ),
                   SettingItem(
-                    icon: FluentIcons.history_20_regular,
+                    icon: Icons.history,
                     title: context.loc.orderHistory,
                   ),
                   Divider(
                     indent: 40.w,
                   ),
                   SettingItem(
-                    icon: FluentIcons.star_20_regular,
+                    icon: Icons.star_outline,
                     title: context.loc.whishlist,
                   ),
                   Divider(
                     indent: 40.w,
                   ),
                   SettingItem(
-                    icon: FluentIcons.person_support_20_regular,
+                    icon: Icons.headset_mic,
                     title: context.loc.support,
                   ),
                   Divider(
                     indent: 40.w,
                   ),
                   SettingItem(
-                    icon: FluentIcons.document_one_page_20_regular,
+                    icon: Icons.article_outlined,
                     title: context.loc.temsAndConditions,
                   ),
                   Divider(
                     indent: 40.w,
                   ),
                   SettingItem(
-                    icon: FluentIcons.shield_person_20_regular,
+                    icon: Icons.shield_outlined,
                     title: context.loc.privacyPolicy,
                   ),
                   Divider(
                     indent: 40.w,
                   ),
                   SettingItem(
-                    icon: FluentIcons.info_20_regular,
+                    icon: Icons.info_outline,
                     title: context.loc.aboutUs,
                   ),
                 ],

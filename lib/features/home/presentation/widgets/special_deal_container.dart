@@ -1,6 +1,5 @@
 import 'package:chaffra/localization/hardcoded_string.dart';
 import 'package:chaffra/themes/tokens.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -75,14 +74,14 @@ class SpecialDealContainer extends StatelessWidget {
                   child: Opacity(
                     opacity: 0.1,
                     child: Icon(
-                      FluentIcons.arrow_trending_16_regular,
+                      Icons.trending_up_outlined,
                       size: 48.h,
                     ),
                   ),
                 ),
                 const Spacer(),
                 Icon(
-                  FluentIcons.chevron_right_24_filled,
+                  Icons.chevron_right,
                   size: 16.h,
                 )
               ],
