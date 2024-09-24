@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as carousel;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -6,7 +6,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../themes/tokens.dart';
 
 class SliderCarousel extends StatefulWidget {
-  final CarouselController controller;
+  final carousel.CarouselSliderController controller;
   final List<String> image;
 
   const SliderCarousel({required this.controller, required this.image, super.key});
@@ -26,15 +26,14 @@ class _SliderCarouselState extends State<SliderCarousel> {
           color: kDark[900],
           height: 550.h,
           width: 400.w,
-          child: CarouselSlider.builder(
-
+          child: carousel.CarouselSlider.builder(
             carouselController: widget.controller,
             itemCount: widget.image.length,
             itemBuilder: (context, index, realIndex) {
               final urlImage = widget.image[index];
               return buildImage(urlImage, index == widget.image.length - 1);
             },
-            options: CarouselOptions(
+            options: carousel.CarouselOptions(
               padEnds: false,
               viewportFraction: 0.85,
               height: 520.h,

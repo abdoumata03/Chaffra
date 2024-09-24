@@ -10,7 +10,7 @@ dependencies:
   animated_item: ^0.0.1
   aura_box: ^1.0.2
   build_runner: ^2.4.9
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
   country_flags: ^2.2.0
   flutter:
     sdk: flutter
@@ -31,6 +31,7 @@ dependencies:
   scroll_snap_list: ^0.9.1
   shared_preferences: ^2.2.3
   smooth_page_indicator: ^1.1.0
+  win32: ^5.5.4
 
 dev_dependencies:
   flutter_test:
