@@ -2,13 +2,14 @@ import 'package:chaffra/features/account/presentation/language.dart';
 import 'package:chaffra/features/account/presentation/notifications.dart';
 import 'package:chaffra/features/account/presentation/settings.dart';
 import 'package:chaffra/features/home/presentation/home.dart';
+import 'package:chaffra/features/product/presentation/product_page.dart';
 import 'package:chaffra/routing/router_page_names.dart';
 import 'package:chaffra/shared/screens/root_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 final routerConfig = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/product/1',
   routes: [
     GoRoute(
       name: pageNames.root,
@@ -45,5 +46,14 @@ final routerConfig = GoRouter(
         child: NotificationsPage(),
       ),
     ),
+    GoRoute(
+        name: pageNames.product,
+        path: '/product/:id',
+        pageBuilder: (context, state) {
+          final id = state.pathParameters['id'];
+          return MaterialPage<void>(
+            child: ProductPage(id: id),
+          );
+        }),
   ],
 );
