@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 final routerConfig = GoRouter(
-  initialLocation: '/product/1',
+  initialLocation: '/',
   routes: [
     GoRoute(
       name: pageNames.root,

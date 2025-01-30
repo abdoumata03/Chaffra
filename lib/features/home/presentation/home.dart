@@ -1,7 +1,6 @@
 import 'package:chaffra/features/home/presentation/widgets/bundle_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/carousel_slider.dart';
 import 'package:chaffra/features/home/presentation/widgets/discover_deal_container.dart';
-import 'package:chaffra/features/home/presentation/widgets/promotion_card.dart';
 import 'package:chaffra/features/home/presentation/widgets/search_button_field.dart';
 import 'package:chaffra/features/home/presentation/widgets/special_deal_container.dart';
 import 'package:chaffra/features/home/presentation/widgets/special_deals_gridview.dart';
@@ -9,7 +8,6 @@ import 'package:chaffra/features/home/presentation/widgets/title_button.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product.dart';
 import 'package:chaffra/features/home/presentation/widgets/list_product_vertical.dart';
 import 'package:chaffra/localization/app_localizations_context.dart';
-import 'package:chaffra/shared/widgets/dark_container.dart';
 import 'package:chaffra/themes/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -18,7 +16,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/categories_gridview.dart';
 import 'widgets/gradient_container_layouts.dart';
-import 'widgets/title_componenet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
